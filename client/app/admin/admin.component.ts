@@ -31,11 +31,13 @@ export class AdminComponent implements OnInit {
   }
 
   deleteUser(user) {
-    this.dataService.delete('/api/user', user).subscribe(
-      data => this.toast.setMessage('User deleted successfully.', 'success'),
-      error => console.log(error),
-      () => this.getUsers()
-    );
+    if (window.confirm('Are you sure you want to permanently delete this user?')) {
+      this.dataService.delete('/api/user', user).subscribe(
+        data => this.toast.setMessage('User deleted successfully.', 'success'),
+        error => console.log(error),
+        () => this.getUsers()
+      );
+    }
   }
 
 }
