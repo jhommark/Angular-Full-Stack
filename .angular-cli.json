@@ -7,10 +7,7 @@
     {
       "root": "client",
       "outDir": "dist/public",
-      "assets": [
-        "assets",
-        "assets/favicon.ico"
-      ],
+      "assets": ["assets"],
       "index": "index.html",
       "main": "main.ts",
       "polyfills": "polyfills.ts",
@@ -18,15 +15,10 @@
       "tsconfig": "tsconfig.app.json",
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
-      "styles": [
-        "../node_modules/bootstrap/dist/css/bootstrap.min.css",
-        "../node_modules/font-awesome/css/font-awesome.min.css",
-        "styles.scss"
-      ],
+      "styles": ["scss/style.scss"],
       "scripts": [
-        "../node_modules/jquery/dist/jquery.min.js",
-        "../node_modules/tether/dist/js/tether.min.js",
-        "../node_modules/bootstrap/dist/js/bootstrap.min.js"
+        "../node_modules/chart.js/dist/Chart.bundle.min.js",
+        "../node_modules/chart.js/dist/Chart.min.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
@@ -58,6 +50,6 @@
   },
   "defaults": {
     "styleExt": "scss",
-    "component": {}
+    "prefixInterfaces": false
   }
 }

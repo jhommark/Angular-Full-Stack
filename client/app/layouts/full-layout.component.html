@@ -1,0 +1,56 @@
+<header class="app-header navbar">
+    <button class="navbar-toggler mobile-sidebar-toggler hidden-lg-up" type="button">&#9776;</button>
+    <a class="navbar-brand" href="/"></a>
+    <ul class="nav navbar-nav hidden-md-down">
+        <li class="nav-item">
+            <a class="nav-link navbar-toggler sidebar-toggler" href="#">&#9776;</a>
+        </li>
+    </ul>
+</header>
+
+<div class="app-body">
+    <div class="sidebar">
+        <nav class="sidebar-nav">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']"><i class="icon-speedometer"></i> Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" [routerLink]="['/cats']"><i class="fa fa-list"></i> Cats</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" [routerLink]="['/account']"><i class="fa fa-user"></i> Account ({{auth.currentUser.username}})</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" [routerLink]="['/admin']" *ngIf="auth.isAdmin"><i class="fa fa-lock"></i> Admin</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" [routerLink]="['/about']"><i class="fa fa-info-circle"></i> About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" [routerLink]="['/auth/logout']"><i class="fa fa-sign-out"></i> Logout</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Main content -->
+    <main class="main">
+
+        <!-- Breadcrumb -->
+        <ol class="breadcrumb">
+            <breadcrumbs></breadcrumbs>
+        </ol>
+
+        <div class="container-fluid">
+            <router-outlet></router-outlet>
+        </div>
+        <!-- /.conainer-fluid -->
+    </main>
+</div>
+
+<footer class="app-footer">
+    <a href="https://genesisui.com">Real</a> &copy; 2017 creativeLabs.
+    <span class="float-right">Powered by <a href="https://genesisui.com">GenesisUI</a>
+    </span>
+</footer>
